@@ -14,19 +14,19 @@ public class AddToShoppingCartSteps {
     LoginPage loginPage = new LoginPage();
     int cartBadge = 0;
     @When("user login with valid user name and password")
-    public void userLoginWithValidUserNameAndPassword() throws InterruptedException {
+    public void userLoginWithValidUserNameAndPassword(){
         loginPage.userNameBox.sendKeys(ConfigReader.getProperty("username"));
         loginPage.passwordBox.sendKeys(ConfigReader.getProperty("password"));
         loginPage.loginButton.click();
     }
     @And("user clicks backpack add to cart button")
-    public void userClicksBackpackAddToCartButton() throws InterruptedException {
+    public void userClicksBackpackAddToCartButton() {
         homePage.addBackPack.click();
         cartBadge= cartBadge+1;
     }
 
     @And("user clicks fleece Jacket add to cart button")
-    public void userClicksFleeceJacketAddToCartButton() throws InterruptedException {
+    public void userClicksFleeceJacketAddToCartButton() {
         homePage.addFleeceJacket.click();
         cartBadge= cartBadge+1;
     }
